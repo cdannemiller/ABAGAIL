@@ -11,6 +11,11 @@ import shared.Instance;
  */
 public class CountOnesEvaluationFunction implements EvaluationFunction {
     /**
+	 * Allows tracking of the number of times this function has been evaluated.
+	 */
+    int evaluations = 0;
+
+    /**
      * @see opt.EvaluationFunction#value(opt.OptimizationData)
      */
     public double value(Instance d) {
@@ -21,6 +26,15 @@ public class CountOnesEvaluationFunction implements EvaluationFunction {
                 val++;
             }
         }
+        evaluations++;
         return val;
+    }
+    
+	/**
+	 * Returns the number of times this function has been evaluated.
+	 */
+    public int getEvaluations()
+    {
+      return evaluations;
     }
 }

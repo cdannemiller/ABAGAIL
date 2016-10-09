@@ -16,6 +16,11 @@ public class ContinuousPeaksEvaluationFunction implements EvaluationFunction {
     private int t;
     
     /**
+     * The number of times that value() has been caled
+     */
+    private int evaluations = 0;
+    
+    /**
      * Make a new continuous peaks function
      * @param t the t value
      */
@@ -27,6 +32,7 @@ public class ContinuousPeaksEvaluationFunction implements EvaluationFunction {
      * @see opt.EvaluationFunction#value(opt.OptimizationData)
      */
     public double value(Instance d) {
+        evaluations++;
         Vector data = d.getData();
         int max0 = 0;
         int count = 0;
@@ -63,5 +69,13 @@ public class ContinuousPeaksEvaluationFunction implements EvaluationFunction {
             r = data.size();
         }
         return Math.max(max1, max0) + r;
+    }
+    
+    /**
+     * Retrives the number of times this function has been evaluated.
+     */ 
+    public int getEvaluations()
+    {
+        return evaluations;
     }
 }
