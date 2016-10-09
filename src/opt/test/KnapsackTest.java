@@ -27,6 +27,8 @@ import opt.prob.MIMIC;
 import opt.prob.ProbabilisticOptimizationProblem;
 import shared.FixedIterationTrainer;
 
+import util.RandomProvider;
+
 /**
  * A test of the knap sack problem
  * @author Andrew Guillory gtg008g@mail.gatech.edu
@@ -34,7 +36,7 @@ import shared.FixedIterationTrainer;
  */
 public class KnapsackTest {
     /** Random number generator */
-    private static final Random random = new Random();
+    private static final Random random = RandomProvider.get();
     /** The number of items */
     private static final int NUM_ITEMS = 40;
     /** The number of copies each */

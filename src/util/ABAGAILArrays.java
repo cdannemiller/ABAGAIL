@@ -2,6 +2,7 @@ package util;
 
 import java.text.DecimalFormat;
 import java.util.Random;
+import util.RandomProvider;
 
 /**
  * Utility functions
@@ -10,7 +11,7 @@ import java.util.Random;
  */
 public class ABAGAILArrays {
     /** Random number generator */
-    public static final Random random = new Random();
+    public static final Random random = RandomProvider.get();
     
     /**
      * Print out an array

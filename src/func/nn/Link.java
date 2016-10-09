@@ -4,6 +4,7 @@ package func.nn;
 
 import java.io.Serializable;
 import java.util.Random;
+import util.RandomProvider;
 
 /**
  * A link between two nodes in a neural network
@@ -14,7 +15,7 @@ public class Link implements Serializable {
     /**
      * The random number generator
      */
-    private static Random random = new Random();
+    private static Random random = RandomProvider.get();
 	
 	/**
 	 * The weight

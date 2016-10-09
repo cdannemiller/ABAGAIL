@@ -12,6 +12,7 @@ import dist.hmm.HiddenMarkovModelReestimator;
 import dist.hmm.ForwardBackwardProbabilityCalculator;
 import dist.hmm.SimpleHiddenMarkovModel;
 import dist.hmm.StateSequenceCalculator;
+import util.RandomProvider;
 
 /**
  * A simple coin flipping test
@@ -38,7 +39,7 @@ public class HMMRandomCoinTest {
             { .5, .5 },
             { .5, .5 }
         });
-        Random random = new Random();
+        Random random = RandomProvider.get();
         Instance[] sequence = new Instance[1000];
         for (int i = 0; i < sequence.length; i++) {
             sequence[i] = new Instance(random.nextInt(2));

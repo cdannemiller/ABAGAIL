@@ -7,6 +7,7 @@ import java.util.Random;
 import shared.*;
 import shared.DataSet;
 import shared.Instance;
+import util.RandomProvider;
 
 /**
  * A KDTree implementation
@@ -19,7 +20,7 @@ public class KDTree implements Serializable {
     /**
      * Random number generator
      */
-    private static final Random random = new Random();
+    private static final Random random = RandomProvider.get();
 
     /** 
      * The head node of the kd tree

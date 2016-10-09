@@ -6,6 +6,8 @@ import java.util.Random;
 import shared.DataSet;
 import shared.Instance;
 
+import util.RandomProvider;
+
 /**
  * A interface for distributions
  * @author Andrew Guillory gtg008g@mail.gatech.edu
@@ -15,7 +17,7 @@ public interface Distribution extends Serializable {
     /**
      * A random number generator
      */
-    public static final Random random = new Random();  
+    public static final Random random = RandomProvider.get();  
     /**
      * Get the probability of i
      * @param i the discrete value to get the probability of

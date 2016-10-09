@@ -6,6 +6,7 @@ import dist.DiscreteDistribution;
 
 import opt.OptimizationAlgorithm;
 import shared.Instance;
+import util.RandomProvider;
 
 
 /**
@@ -19,7 +20,7 @@ public class StandardGeneticAlgorithm extends OptimizationAlgorithm {
     /**
      * The random number generator
      */
-    private static final Random random = new Random();
+    private static final Random random = RandomProvider.get();
     
     /**
      * The population size
